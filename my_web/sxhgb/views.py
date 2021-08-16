@@ -4,3 +4,7 @@ from django.shortcuts import render
 
 def indexview(requests):
     return render(requests,'index.html')
+
+
+def sxhgbview(requests):
+    return render(requests,'sxhgb.html')

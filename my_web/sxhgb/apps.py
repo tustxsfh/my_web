@@ -2,4 +2,4 @@ from django.apps import AppConfig
 
 
 class XingqiConfig(AppConfig):
-    name = 'xingqi'
+    name = 'sxhgb'

@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+
+
+
+    <div class="container ">
+        <div class="row">
+            <div class="col-sm-10 col-md-6 mb-3">
+                <div class="card border-secondary ">
+                    <img src="https://askforlaw.files.wordpress.com/2017/01/scenario_service.jpg?w=1080"
+                         class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">山西好干部</h5>
+                        <p class="card-text">山西好干部在线学习</p>
+                        <a href="{% url 'sxhgb:sxhgb' %}" class="btn btn-primary">点击使用</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-10 col-md-6 mb-3">
+                <div class="card border-secondary mb-3">
+                    <img src="https://askforlaw.files.wordpress.com/2017/01/scenario_service.jpg?w=1080"
+                         class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">法律词库</h5>
+                        <p class="card-text">生成自己的专业词库</p>
+                        <a href="{% url 'ciku:ciku' %}" class="btn btn-primary">点击使用</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+{% endblock %}
