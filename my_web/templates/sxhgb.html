@@ -5,10 +5,10 @@
     <div id="app">
         <div class="container-fluid">
             <form method="post" class="user_input" @submit="on_submit" v-cloak>
-                {{ csrf_input }}
+                {% csrf_token %}
                 <div class="form-group">
                     <label for="formGroupExampleInput">你的山西好干部账号</label>
-                    <input type="text" v-model="username" @blur="check_name" class="form-control"
+                    <input type="text" v-model="username" @blur="check_name" name="username" class="form-control"
                            id="formGroupExampleInput"
                            placeholder="请输入你的山西好干部账号">
                     <span class="err_tip" v-show="err_name"> {{ err_name_msg }}</span>
@@ -16,7 +16,7 @@
                 </div>
                 <div class="form-group">
                     <label for="formGroupExampleInput2">你的山西好干部密码</label>
-                    <input type="text" v-model="psssword" @blur="check_pwd" class="form-control"
+                    <input type="text" v-model="psssword" @blur="check_pwd" name="password" class="form-control"
                            id="formGroupExampleInput2"
                            placeholder="请输入你的山西好干部密码">
                     <span class="err_tip" v-show="err_pwd"> {{ err_pwd_msg }}</span>

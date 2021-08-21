@@ -1,0 +1,5 @@
+pytesseract==0.3.6
+selenium==3.141.0
+requests==2.22.0
+beautifulsoup4==4.9.3
+Pillow==8.2.0

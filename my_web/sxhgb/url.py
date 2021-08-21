@@ -10,4 +10,5 @@ urlpatterns = [
     path('', indexview, name='index'),
     path('sxhgb/', sxhgbview, name='sxhgb'),
 
+
 ]
