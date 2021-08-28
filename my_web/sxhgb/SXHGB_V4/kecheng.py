@@ -4,7 +4,7 @@ from bs4 import BeautifulSoup
 import re
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.action_chains import ActionChains
-from login import browser,start_time
+from .login import browser,start_time
 
 def keicheng():
     """课程学习"""

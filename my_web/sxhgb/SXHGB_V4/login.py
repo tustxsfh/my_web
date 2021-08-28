@@ -29,7 +29,7 @@ def login(ume, pwd, name):  # 登录函数
         password = browser.find_element_by_id('userPassword')
         password.send_keys(pwd)  # 此处填入密码
         # 获取截图
-        browser.get_screenshot_as_file('tempimg/screenshot.png')
+        pic = browser.get_screenshot_as_file('screenshot.png')
 
         # 获取指定元素位置
         element = browser.find_element_by_id('img')
@@ -39,11 +39,11 @@ def login(ume, pwd, name):  # 登录函数
         bottom = int(element.location['y'] + element.size['height'])
 
         # 通过Image处理图像
-        im = Image.open('tempimg/screenshot.png')
+        im = Image.open('screenshot.png')
         im = im.crop((left, top, right, bottom))
-        im.save('tempimg/random.png')
+        im.save('random.png')
 
-        img = Image.open('tempimg/random.png')
+        img = Image.open('random.png')
         code = pytesseract.image_to_string(img)
 
         randomcode = browser.find_element_by_id('randomCode')

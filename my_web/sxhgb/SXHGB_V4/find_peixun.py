@@ -2,7 +2,7 @@
 import time,os
 from bs4 import BeautifulSoup
 import re
-from login import browser
+from .login import browser
 
 def find_peixun_url():
     """获取我的专题培训课程url"""

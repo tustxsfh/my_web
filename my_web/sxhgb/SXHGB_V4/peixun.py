@@ -1,35 +1,31 @@
-from login import browser
+from .login import browser
 from bs4 import BeautifulSoup
-from login import start_time
-import time, re, random
+from .login import start_time
+import time
+import re
 from selenium.webdriver.common.action_chains import ActionChains
 from selenium.webdriver.common.keys import Keys
 from selenium.common.exceptions import TimeoutException
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import WebDriverException
 
-def peixun_random():
+def peixun():
     """专题培训学习"""
     print('专题学习')
-    with open('peixun_url.txt', 'r') as f:
+    with open('/home/tustxsfh/PycharmProjects/my_web/my_web/sxhgb/SXHGB_V4/peixun_url.txt', 'r') as f:
         cou_url_list = f.read().splitlines()
 
-        sum = len(cou_url_list)
+        # sum = len(cou_url_list)
+    for pei_url in cou_url_list:
+        print('-----------------------------------------------------------------------------------')
+        print(pei_url)
 
-    for x in range(1, 100):  # 每次随机学习，学习50次
-
-        # 培训页面
-        pei_url = (cou_url_list[random.randint(1, sum - 1)])
-        # for pei_url in cou_url_list:
         try:
             browser.get(pei_url)
-            print('--------------------------------------')
-            print(pei_url)
             # print(browser.page_source)
 
             browser.find_element_by_xpath(
                 '//*[@id="aCoursesList"]/div/div[2]/div/div[1]/div/div[2]/div[2]/div/ul/li').click()  # 切换到培训内容详情页
-
             # print(browser.page_source)
             cou_obj = BeautifulSoup(browser.page_source, 'lxml')
             time.sleep(3)
@@ -52,7 +48,13 @@ def peixun_random():
 
                 end_time = time.time()
                 study_time = (end_time - start_time) / 60
-                print('已学习%s分' % study_time)
+                study_time = int(study_time)
+                dtime = int(study_time / 24)
+                other = study_time % 24
+                htime = other // 60
+                mtime = other % 60
+                
+                print('已学习%s天%s时%s分' % (dtime,htime,mtime))
 
                 li_html = str(li)
                 # print('--------------------------------------')
@@ -117,6 +119,8 @@ def peixun_random():
                     continue
 
                 else:
+                    if '100%' in li_html:
+                        continue
                     print('读文字')
                     browser.find_element_by_id(id).click()
                     time.sleep(5)
@@ -126,5 +130,11 @@ def peixun_random():
                     browser.refresh()
 
             except TimeoutException:
-                print('加载异常')
+                print('加载时间异常')
+                continue
+            except NoSuchElementException:
+                print('元素异常')
+                continue
+            except WebDriverException:
+                print('webdriver异常')
                 continue

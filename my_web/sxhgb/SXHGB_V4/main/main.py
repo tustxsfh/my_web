@@ -4,12 +4,12 @@
 # import time,os
 
 
-from find_course import *
-from find_peixun import *
-from kecheng import *
-from login import *
-from peixun import *
-from peixun_random import *
+from my_web.sxhgb.SXHGB_V4.find_course import *
+from my_web.sxhgb.SXHGB_V4.find_peixun import *
+from my_web.sxhgb.SXHGB_V4.kecheng import *
+from my_web.sxhgb.SXHGB_V4.login import *
+from my_web.sxhgb.SXHGB_V4.peixun import *
+from my_web.sxhgb.SXHGB_V4.peixun_random import *
 
 
 # 完成登录功能
