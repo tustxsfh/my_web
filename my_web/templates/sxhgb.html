@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% load static %}
 
 {% block content %}
     <div id="app">
@@ -8,31 +8,31 @@
                 {% csrf_token %}
                 <div class="form-group">
                     <label for="formGroupExampleInput">你的山西好干部账号</label>
-                    <input type="text" v-model="username" @blur="check_username" name="username" class="form-control"
+                    <input type="text" v-model="username" name="username" class="form-control"
                            id="formGroupExampleInput"
                            placeholder="请输入你的山西好干部账号">
-                    <span class="err_tip" v-show="err_name"> {{ err_name_msg }}</span>
+                    {#                    <span class="err_tip" v-show="err_name"> {{ err_name_msg }}</span>#}
 
                 </div>
                 <div class="form-group">
                     <label for="formGroupExampleInput2">你的山西好干部密码</label>
-                    <input type="text" v-model="psssword" @blur="check_pwd" name="password" class="form-control"
+                    <input type="text" v-model="password" name="password" class="form-control"
                            id="formGroupExampleInput2"
                            placeholder="请输入你的山西好干部密码">
-                    <span class="err_tip" v-show="err_pwd"> {{ err_pwd_msg }}</span>
+                    {#                    <span class="err_tip" v-show="err_pwd"> {{ err_pwd_msg }}</span>#}
                 </div>
                 <div class="form-group">
                     <label for="formGroupExampleInput">你的名字</label>
-                    <input type="text" v-model="yourname" @blur="check_name" name="yourname" class="form-control"
+                    <input type="text" v-model="yourname" name="yourname" class="form-control"
                            id="formGroupExampleInput"
                            placeholder="请输入你的名字">
-                    <span class="err_tip" v-show="err_name"> {{ err_name_msg }}</span>
+                    {#                    <span class="err_tip" v-show="err_yourname"> {{ err_yourname_msg }}</span>#}
 
                 </div>
                 <br>
-                <button type="submit" class="btn btn-primary">开始学习</button>
+                <button type="submit" v-show="is_click" class="btn btn-primary">[[ click_message ]]</button>
             </form>
-
+            <button type="button" v-show="is_click" class="btn btn-primary btn-lg">[[yourname]]正在学习中......</button>
         </div>
     </div>
 {% endblock %}
