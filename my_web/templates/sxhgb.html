@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static %}
+
 
 {% block content %}
     <div id="app">
@@ -30,7 +30,7 @@
 
                 </div>
                 <br>
-                <button type="submit" v-show="is_click" class="btn btn-primary">[[ click_message ]]</button>
+                <button type="submit" v-show="is_not_click" class="btn btn-primary">[[ click_message ]]</button>
             </form>
             <button type="button" v-show="is_click" class="btn btn-primary btn-lg">[[yourname]]正在学习中......</button>
         </div>
