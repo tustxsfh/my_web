@@ -15,7 +15,7 @@ let vm = new Vue({
         // error_name: false,
         // error_password: false,
         // error_yourname: false,
-        is_click: false,
+        is_click: true,
 
 
         // error_message
