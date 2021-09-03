@@ -5,7 +5,7 @@
     <div id="app">
         <div class="container col-md-4 col-lg-6 col-8">
             <form method="post" class="user_input" @submit="on_submit" v-cloak>
-                {% csrf_token %}
+                <input type="hidden" name="csrfmiddlewaretoken" value="{{ csrf_token }}">
                 <div class="form-group">
                     <label for="formGroupExampleInput">你的山西好干部账号</label>
                     <input type="text" v-model="username" name="username" class="form-control"

@@ -1,4 +1,4 @@
-{% load static %}
+{#{% load static %}#}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +17,7 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light" style="background-color: #e3f2fd;">
     <div class="container-fluid">
-        <a class="navbar-brand" href="{% url 'sxhgb:index' %}">法律人实用工具</a>
+        <a class="navbar-brand" href="{{ url('sxhgb:index') }}">法律人实用工具</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -25,10 +25,10 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{% url 'sxhgb:sxhgb' %} ">山西好干部</a>
+                    <a class="nav-link active" aria-current="page" href="{{ url('sxhgb:sxhgb') }} ">山西好干部</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" href="{% url 'ciku:ciku' %}">法律词库</a>
+                    <a class="nav-link active" href="{{ url('ciku:ciku') }}">法律词库</a>
                 </li>
 
 
@@ -53,7 +53,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
         crossorigin="anonymous"></script>
-<script src="{% static 'js/vue-2.5.16.js' %}"></script>
-<script src="{% static 'js/sxhgb.js' %}"></script>
+<script src="{{ static('js/vue-2.5.16.js') }}"></script>
+<script src="{{ static('js/sxhgb.js') }}"></script>
 </body>
 </html>
