@@ -28,8 +28,8 @@ def find_course():
     cou_url = "https://www.sxgbxx.gov.cn/front/showCourseList"
     cou_html = urlopen(cou_url)
 
-    f1 = open('cou_url.txt','w')
-    f2 = open('cou_name.txt','w')
+    f1 = open('cou_url.txt', 'w')
+    f2 = open('cou_name.txt', 'w')
     page = 0
     while page < 42:
         cou_obj = BeautifulSoup(browser.page_source,"lxml")
